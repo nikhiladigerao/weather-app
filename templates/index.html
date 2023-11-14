@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather App</title>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Temperature</th>
+        <th>Min Temperature</th>
+        <th>Max Temperature</th>
+        <th>Humidity</th>
+      </tr>
+      {% if data.current_temperature and data.min_temp and data.max_temp and
+      data.current_humidity %}
+      <tr>
+        <td>{{ data.current_temperature }}</td>
+        <td>{{ data.min_temp }}</td>
+        <td>{{ data.max_temp }}</td>
+        <td>{{ data.current_humidity }}</td>
+      </tr>
+      {% endif %}
+    </table>
+  </body>
+</html>
